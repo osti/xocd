@@ -14,7 +14,7 @@
 
 using namespace std;
 
-#include "../mongoose.h"
+#include "mongoose.h"
 
 typedef struct mg_connection c;
 typedef const struct mg_request_info r;
