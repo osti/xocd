@@ -14,3 +14,5 @@ http://server:port/E/8keV   -- outputs 1 - delta + beta i of element E at energy
 
 Written by Markus Osterhoff, osterhof@esrf.eu.
 
+Using mongoose -- http://code.google.com/p/mongoose/
+
