@@ -101,9 +101,9 @@ void wavel(c* conn, r* request_info, void* user_data)
     }
 }
 
-void say(struct mg_connection* conn, string s)
+void say(struct mg_connection* conn, const char* s)
 {
-    mg_printf(conn, s.c_str());
+    mg_printf(conn, s);
 }
 
 void head(struct mg_connection* conn, int z)

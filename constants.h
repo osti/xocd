@@ -24,7 +24,7 @@ string port;
 struct mg_context* ctx;
 
 void head(c*, int);
-void say(c*, string);
+void say(c*, const char*);
 
 void index (c*, r*, void*);
 void all   (c*, r*, void*);
