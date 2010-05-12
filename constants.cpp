@@ -160,6 +160,7 @@ char* interpolate(const char* matfile, double lambda)
 		    buf = (char*) malloc(sizeof(char) * 64);
 		    snprintf(buf, 64, "1 %+7.3e %+7.3e i\r\n", -delta, beta);
 
+		    fclose(stream);
 		    return buf;
 		}
 	    }
