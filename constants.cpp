@@ -250,6 +250,15 @@ int main(int argc, char* const* argv)
 
     if (flag_daemon)
     {
+	pid_t i = fork();
+	if (i<0)
+	    exit(1); /* fork error */
+	if (i>0)
+	{
+	    std::cout << "X-ray Optical Constants Daemon running in background..." << std::endl;
+	    exit(0); /* parent exits */
+	}
+
     }
 
     ctx = mg_start();
