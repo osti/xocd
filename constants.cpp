@@ -12,8 +12,8 @@ void all(c* conn, r* request_info, void* user_data)
 {
     user_data = user_data;
     char* material = request_info->uri + 1;
-    string answer;
-    string matfile = path + "/" + material + ".nk";
+    std::string answer;
+    std::string matfile = path + "/" + material + ".nk";
 
     if ( access( matfile.c_str(), R_OK ) == 0 )
     {
@@ -46,7 +46,7 @@ void energy(c* conn, r* request_info, void* user_data)
 {
     user_data = user_data;
     request_info = request_info;
-    string answer;
+    std::string answer;
 
     char* material = request_info->uri + 1;
     char* energy = strstr(material, "/") + 1;
@@ -57,7 +57,7 @@ void energy(c* conn, r* request_info, void* user_data)
 	wavelength *= 1000;
 
     strstr(material, "/")[0] = '\0';
-    string matfile = path + "/" + material + ".nk";
+    std::string matfile = path + "/" + material + ".nk";
 
     char* result = interpolate(matfile.c_str(), wavelength);
 
@@ -78,13 +78,13 @@ void wavel(c* conn, r* request_info, void* user_data)
 {
     user_data = user_data;
     request_info = request_info;
-    string answer;
+    std::string answer;
 
     char* material = request_info->uri + 1;
     char* wavelength = strstr(material, "/") + 1;
 
     strstr(material, "/")[0] = '\0';
-    string matfile = path + "/" + material + ".nk";
+    std::string matfile = path + "/" + material + ".nk";
 
     char* result = interpolate(matfile.c_str(), atof(wavelength)*10);
 
@@ -202,7 +202,7 @@ int main(int argc, const char *argv[])
     mg_set_uri_callback(ctx, "/*/*"         ,  &wavel        , NULL);
     mg_set_uri_callback(ctx, "/*"           ,  &all          , NULL);
 
-    cout << "optical constants server running..." << endl;
+	std::cout << "X-ray Optical Constants Daemon running..." << std::endl;
 
     while (exit_flag == 0)
 	sleep(1);

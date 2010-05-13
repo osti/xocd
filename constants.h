@@ -12,15 +12,13 @@
 #include <string.h>
 #include <stdlib.h>
 
-using namespace std;
-
 #include "mongoose.h"
 
 typedef struct mg_connection c;
 typedef const struct mg_request_info r;
 
-string path;
-string port;
+std::string path;
+std::string port;
 struct mg_context* ctx;
 
 void head(c*, int);
