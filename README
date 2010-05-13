@@ -1,0 +1,18 @@
+optical constants server
+
+Hello, I am a small webserver serving you optical constants of elements and
+some compounds.
+
+The data are taken from IMD.
+
+
+http://server:port/E        -- outputs complete .nk-file of element E
+http://server:port/E/0.155  -- outputs 1 - delta + beta i of element E at wavelength 0.155 nm
+http://server:port/E/8000eV -- outputs 1 - delta + beta i of element E at energy 8000 eV
+http://server:port/E/8keV   -- outputs 1 - delta + beta i of element E at energy 8 keV
+
+
+Written by Markus Osterhoff, osterhof@esrf.eu.
+
+Using mongoose -- http://code.google.com/p/mongoose/
+
