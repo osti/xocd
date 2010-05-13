@@ -1,18 +1,37 @@
-optical constants server
+X-ray Optical Constants Daemon (xocd) serves the index of refraction
+for various elements and compounds via HTTP to your applications.
 
-Hello, I am a small webserver serving you optical constants of elements and
-some compounds.
-
-The data are taken from IMD.
-
-
-http://server:port/E        -- outputs complete .nk-file of element E
-http://server:port/E/0.155  -- outputs 1 - delta + beta i of element E at wavelength 0.155 nm
-http://server:port/E/8000eV -- outputs 1 - delta + beta i of element E at energy 8000 eV
-http://server:port/E/8keV   -- outputs 1 - delta + beta i of element E at energy 8 keV
+The data is read from the *.nk-files of the IMD suite, located
+in a folder './data', or given by the option -f <folder>.
+The IMD software can be obtained from David Windt [1] or the ESRF [2].
+Example files for silicon (Si), tungsten (W) and boron carbide (B4C),
+as well as vacuum (vac) are provided.
+The http server part is taken from the mongoose project [3].
 
 
-Written by Markus Osterhoff, osterhof@esrf.eu.
+xocd can is written by Markus Osterhoff and can be optain from [4,5].
 
-Using mongoose -- http://code.google.com/p/mongoose/
+
+	usage: ./xocd [-d] [-f <folder>] [-p port] [-h]
+
+	-d: daemonize, fork into background; default: don't
+	-f: use *.nk-files in <folder>; default: ./data
+	-p: listen on <port> for HTTP connections; default: 42001
+	-h: help; this is me.
+
+How to get the data:
+browse to http://localhost:42001/ -- with the following URIs:
+	/Si        -- ask for whole Si.nk-file
+	/Si/17keV  -- ask for index of refraction at 17 keV. 
+	/Si/8048eV -- ask for index of refraction at 8048 eV.
+	/Si/0.1nm  -- ask for index of refraction at 0.1 nm. 
+
+The output for specific energies / wavelengths will be of the form
+	1 -(delta) +(beta)i
+
+[1] http://cletus.phys.columbia.edu/~windt/idl/
+[2] http://ftp.esrf.eu/pub/scisoft/xop2.1/Unix/Extensions/
+[3] http://code.google.com/p/mongoose/
+[4] http://www.roentgen.physik.uni-goettingen.de/~mosterh
+[5] http://github.com/osti/xocd
 
