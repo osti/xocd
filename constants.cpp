@@ -191,12 +191,6 @@ int main(int argc, const char *argv[])
     ctx = mg_start();
     mg_set_option(ctx, "ports", port.c_str());
     mg_set_uri_callback(ctx, "/"            ,  &index        , NULL);
-    //mg_set_uri_callback(ctx, "/*/*eV/beta"  ,  &energy_beta  , NULL);
-    //mg_set_uri_callback(ctx, "/*/*ev/beta"  ,  &energy_beta  , NULL);
-    //mg_set_uri_callback(ctx, "/*/*/beta"    ,  &wavel_beta   , NULL);
-    //mg_set_uri_callback(ctx, "/*/*eV/delta" ,  &energy_delta , NULL);
-    //mg_set_uri_callback(ctx, "/*/*ev/delta" ,  &energy_delta , NULL);
-    //mg_set_uri_callback(ctx, "/*/*/delta"   ,  &wavel_delta  , NULL);
     mg_set_uri_callback(ctx, "/*/*eV"       ,  &energy       , NULL);
     mg_set_uri_callback(ctx, "/*/*ev"       ,  &energy       , NULL);
     mg_set_uri_callback(ctx, "/*/*"         ,  &wavel        , NULL);
