@@ -1,0 +1,6 @@
+;  Optical constants for vacuum.
+;   
+;  Lambda (A) n k
+;-----------------
+      0       1    0
+   1e10       1    0
