@@ -1,0 +1,8 @@
+#!/bin/sh
+
+FILE=GIT-VERSION
+
+echo -n "#define GITVERSION \"" > $FILE
+git describe --tags --always | tr '\n' '"' >> $FILE
+echo >> $FILE
+
