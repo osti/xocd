@@ -5,7 +5,7 @@ void index(c* conn, r* request_info, void* user_data)
     request_info = request_info;
     user_data = user_data;
     head(conn, 200);
-    say(conn, "running.\r\n");
+    say(conn, "X-ray Optical Constants Daemon " GITVERSION);
 }
 
 void all(c* conn, r* request_info, void* user_data)

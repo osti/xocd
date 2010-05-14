@@ -17,6 +17,7 @@
 #include <stdlib.h>
 
 #include "mongoose.h"
+#include "GIT-VERSION"
 
 typedef struct mg_connection c;
 typedef const struct mg_request_info r;
