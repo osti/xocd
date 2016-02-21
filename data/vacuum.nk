@@ -1,0 +1,11 @@
+;  Optical constants for Ni.
+;  Density = 8.9000000 g/cm3
+;   
+;  Computed from the atomic scattering factors from 
+;  CXRO <http://www-cxro.lbl.gov> and
+;  LLNL <http://www-phys.llnl.gov/V_Div/scattering/asf.html>.
+;   
+;  Lambda (A) n k
+;-----------------
+      0       1    0
+      1e10       1    0
